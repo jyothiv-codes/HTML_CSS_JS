@@ -7,10 +7,14 @@ function startTime() {
   var h = today.getHours();
   var m = today.getMinutes();
   var s = today.getSeconds();
+
   m = checkTime(m);
   s = checkTime(s);
+  if (s=="00")
+  alert("It is a new minute");
   document.getElementById('txt').innerHTML =
   h + ":" + m + ":" + s;
+
   var t = setTimeout(startTime, 500);//here, I have a doubt in recursion part
 }
 function checkTime(i) {
